@@ -9,7 +9,7 @@ public class Updater extends Thread {
         try {
             Server.updateReddit();
             Server.updateGitHub();
-            Server.updateTweets();
+            //Server.updateTweets();
         } catch (Exception e) {
             e.printStackTrace();
         }
