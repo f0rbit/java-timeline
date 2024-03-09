@@ -1,0 +1,39 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'dev.forbit'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+	jcenter()
+	maven { url "https://jitpack.io" }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'io.github.redouane59.twitter:twittered:2.6'
+	implementation "net.dean.jraw:JRAW:1.1.0"
+	implementation group: 'org.kohsuke', name: 'github-api', version: '1.301'
+
+	implementation 'com.google.code.gson:gson:2.8.7'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+	implementation 'io.github.cdimascio:dotenv-java:3.0.0' 
+}
+
+test {
+	useJUnitPlatform()
+}
